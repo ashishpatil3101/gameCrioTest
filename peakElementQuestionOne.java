@@ -1,4 +1,4 @@
-class Solution {
+class peakElementQuestionOne {
     
     
     public static int peakElement(int[] nums) {
