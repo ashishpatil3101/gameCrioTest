@@ -2,12 +2,9 @@ class Solution {
     
     
     public static int peakElement(int[] nums) {
-        if (nums.length == 1)
-            return 0;
-        if (nums[0] > nums[1])
-            return 0;
-        if (nums[nums.length - 1] > nums[nums.length - 2])
-            return nums.length - 1;
+        
+        if (nums.length < 3) // bcz there should be at least three elements
+            return -1;    
         int left = 0;
         int right = nums.length - 1;
         while (left < right) {
@@ -23,8 +20,12 @@ class Solution {
     }
 
     public static void main(String[] args) {
-       int  array[]= {5, 10, 20, 15};
+       int  array[]= {10, 20};
        int idx = peakElement(array);
-       System.out.println(array[idx]);
+        // if peak element is present it will print peak element value  
+       // if peak element is not present it will print -1;   
+       System.out.println( idx > -1 ? array[idx] : -1);
+       //time complexity will be O(logn) as i am using binary search 
+       // linear sesarch can also be used to find element but time complexity will O(n)
     }
 }
